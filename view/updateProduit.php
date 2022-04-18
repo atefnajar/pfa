@@ -114,7 +114,7 @@
 						<div class="card">
 							<form action="../controller/ProduitController.php?action=update" method="POST" >
 								  <div class="info2">
-									<h3>nouveau client</h3>
+									<h3>Update produit </h3>
 									<?php
 									include_once('../dao/ProduitDao.php');
 									$rep=ProduitDao::GetProduit($_REQUEST['ref']);
@@ -125,19 +125,19 @@
 								<div class="form-row">
 								  <div class="form-group col-md-6">
 									<label for="nom">Reference Produit</label>
-									<input type="text" class="form-control" name="reference" id="ref" value="<?=$ligne->reference?>">
+									<input type="text" class="form-control" required readonly name="reference" id="ref" value="<?=$ligne->reference?>">
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">Coup unitaire</label>
-									<input type="number" class="form-control" name="cout_unitaire" id="cout_unitaire" value="<?=$ligne->cout_unitaire?>">
+									<input type="number" class="form-control" required name="cout_unitaire" id="cout_unitaire" value="<?=$ligne->cout_unitaire?>">
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">Description</label>
-									<input type="text"   name="description" class="form-control" id="description" value="<?=$ligne->description?>">
+									<input type="text"   name="description" required class="form-control" id="description" value="<?=$ligne->description?>">
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">Date de creation</label>
-									<input type="text" class="form-control" name="dateCreation" id="dateCreation" value="<?=$ligne->dateCreation?>">
+									<input type="text" class="form-control" required name="dateCreation" id="dateCreation" value="<?=$ligne->dateCreation?>">
 								  </div>
 								<input type="submit" class="btn btn-success" value="Sauvegarder">
 								</form>
