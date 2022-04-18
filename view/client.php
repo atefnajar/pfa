@@ -107,17 +107,17 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>PRODUITS</h1>
+					<h1>CLIENTS</h1>
 				</div>
 			</div>
 
-            <form action="rechercheProduit.php" method="POST">
+            <form action="rechercheClient.php" method="POST">
 				<?php
-				include_once '../dao/ProduitDao.php';
+				include_once '../dao/ClientDao.php';
 				?>
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" class="form-control" name="reference" placeholder="reference produit">
+                        <input type="text" class="form-control" name="idc" placeholder="id client">
                       </div>
                   
                  
@@ -128,11 +128,11 @@
               <hr>
 			<div class="flex-container">
 				<div>
-					<a  class="btn btn-primary" href="ajoutProduit.php"><i class='bx bx-plus'></i>Nouveau produit</a>
+					<a  class="btn btn-primary" href="ajoutClient.php"><i class='bx bx-plus'></i>Nouveau client</a>
 				</div>
 			  </div>
 			  <div class="left">
-				<h3 style="text-align:center;">affichage  des produits</h3>
+				<h3 style="text-align:center;">affichage  des clients</h3>
 			</div>
 			
 			<div class="table-data">
@@ -145,19 +145,21 @@
 					
 <?php
 
-$ligne=ProduitDao::GetAllProduit();
+$ligne=ClientDao::GetAllClient();
 if ($ligne->rowCount()==0){
-	?><p>aucun produit existe</p><?php
+	?><p>aucun Client existe </p><?php
 }else{
 ?>
 
 
 <table>
 <tr>
-		<th>reference</th>
-		<th>cout unitaire</th>
-	<th>description</th>
-<th>date de creation</th>
+		<th>id client</th>
+		<th>Nom du client</th>
+		<th>Email</th>
+	<th>date fac</th>
+<th>date exp </th>
+<th>personne de contact</th>
 <th>modification/supprission</th>
 
 </tr>
@@ -166,17 +168,19 @@ if ($ligne->rowCount()==0){
 while ($value=$ligne->fetchObject()){
 ?>
 <tr>
- <td><?=$value->reference; ?> </td>
- <td><?=$value->cout_unitaire; ?> </td>
- <td><?=$value->description; ?> </td>
- <td><?=$value->dateCreation; ?> </td>
+ <td><?=$value->idc; ?> </td>
+ <td><?=$value->nom; ?> </td>
+ <td><?=$value->email;?> </td>
+ <td><?=$value->adresse_fac; ?> </td>
+ <td><?=$value->adresse_exp; ?> </td>
+ <td><?=$value->personne_contact; ?> </td>
  <td>
 	 <div style="text-align:center;">
-	<a  href="#"onclick=' confirmeProduit(<?=$value->reference?>)'>
+	<a  href="#"onclick=' confirmeClient(<?=$value->idc?>)'>
 		<img src="../images/corbeille.png">
 
 	</a>
-	<a href="updateProduit.php?ref=<?=$value->reference?>"> 
+	<a href="updateClient.php?idc=<?=$value->idc?>"> 
 		<img src="../images/crayon.png">
 
 	</a>
