@@ -186,4 +186,4 @@ $value=$ligne->fetchObject()
 </body>
 <script src="../js/confirme.js"></script>
 <script src="../js/script.js"></script>
-</html>
+</html> 
