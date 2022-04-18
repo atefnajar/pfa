@@ -119,22 +119,22 @@
 								</div>
 								<?php
 									include_once('../dao/ClientDao.php');
-									$rep=ClientDao::GetClient($_REQUEST['id']);
+									$rep=ClientDao::GetClient($_REQUEST["idc"]);
 									$ligne=$rep->fetchObject();
 									
 									?>
 								<div class="form-row">
 								  <div class="form-group col-md-6">
 									<label for="nom">Nom du client</label>
-									<input type="text" class="form-control" name="nom" id="nom" value="<?=$ligne->nom?>">
+									<input type="text" class="form-control" name="nom" id="nom" value="<?=$ligne->nom?>" required>
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">identifiant legale du client</label>
-									<input type="text" class="form-control" name="id" id="id" value="<?=$ligne->idc?>">
+									<input type="text" class="form-control" name="idc" id="id" value="<?=$ligne->idc?>" required>
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">Personne de contact</label>
-									<input type="text"   name="personne_contact" class="form-control" id="npc" value="<?=$ligne->personne_contact?>">
+									<input type="text"   name="personne_contact" class="form-control" id="npc" required value="<?=$ligne->personne_contact?>">
 								  </div>
 								  <div class="form-group col-md-6">
 									<label for="Nom">Email du client</label>
@@ -142,11 +142,11 @@
 								  </div>
 								  <div class="form-group col-md-6">
 								  <label for="Textarea">Adress de facturation</label>
-								  <input class="form-control" name="adresse_fac" id="Textarea" value="<?=$ligne->adresse_fac?>" required>
+								  <input class="form-control" name="adresse_fac" id="Textarea"  required value="<?=$ligne->adresse_fac?>" required>
 								  </div>
 								  <div class="form-group col-md-6">
 								  <label for="Textarea2">Adress d'expedition</label>
-								  <input class="form-control"  name="adresse_exp" id="Textarea2" value="<?=$ligne->adresse_exp?>" required>
+								  <input class="form-control"  name="adresse_exp" id="Textarea2" required value="<?=$ligne->adresse_exp?>" required>
 								  </div>
 								</div>
 								<input type="submit" class="btn btn-success" value="Sauvegarder">
