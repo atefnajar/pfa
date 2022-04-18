@@ -180,7 +180,7 @@ while ($value=$ligne->fetchObject()){
 		<img src="../images/corbeille.png">
 
 	</a>
-	<a href="updateClient.php?ref=<?=$value->idc?>"> 
+	<a href="updateClient.php?idc=<?=$value->idc?>"> 
 		<img src="../images/crayon.png">
 
 	</a>
