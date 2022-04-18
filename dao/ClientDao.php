@@ -21,7 +21,7 @@ class ClientDao{
     {//update client 
 	$connexionbd=new ConnexionBD();
 
-	return $connexionbd->exec("update client set nom='".$client->getNom()."', mail='".$client->getMail()."', date_exp='".$client->datee()."' , date_fac='".$client->getDatef()."' , personne_contact='".$client->personne_contact()."'");
+	return $connexionbd->exec("update client set idc='".$client->getIdc()."', nom='".$client->getNom()."', email='".$client->getMail()."', adresse_exp='".$client->getAdresse_exp()."' , adresse_fac='".$client->getAdresse_fac()."' , personne_contact='".$client->getPersonne_contact()."'");
     }
     
     public static function DeleteClient($idc)
