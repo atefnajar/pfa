@@ -153,8 +153,8 @@ $value=$ligne->fetchObject()
  <td><?=$value->idc; ?> </td>
  <td><?=$value->nom; ?> </td>
  <td><?=$value->mail; ?> </td>
- <td><?=$value->date_fac; ?> </td>
- <td><?=$value->date_exp; ?> </td>
+ <td><?=$value->adresse_fac; ?> </td>
+ <td><?=$value->adresse_exp; ?> </td>
  <td><?=$value->personne_contact; ?> </td>
 
  <td>
